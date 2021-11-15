@@ -19,36 +19,29 @@ import javax.swing.JPanel;
  */
 public class Lienzo extends  JPanel implements  MouseListener {
 
-    ArrayList <Circulo>     listaCirculos = null; 
-  
+    private Vector<Nodo> vectorNodos; 
+    
     public Lienzo() 
     {
-        setListaCirculos(new ArrayList<>());
-        addMouseListener(this);
-    
+        this.vectorNodos = new  Vector<>(); 
+    this.addMouseListener(this);
     }
-    
+   
     @Override
    public void paint(Graphics g)
    {
-   super.paint(g);
-   for(Circulo objCirculo : getListaCirculos()) {
-   
-   objCirculo.pintar(g);
+   for (Nodo nodos : vectorNodos){
+    // recorre los metodos y los va pintando    
+     nodos.pintar(g);
    }
-   
-   
-   
-   
-   
-} 
+   } 
 
     @Override
     public void mouseClicked(MouseEvent e) {
-    if(e.getButton() == 1) {
-    
-        getListaCirculos().add(new Circulo(e.getX() - 30, e.getY() - 30));
-        repaint();
+    if(e.getButton() == MouseEvent.BUTTON1) {
+    // IDENTIFICA LA ACCION PARA PINTAR 
+   this.vectorNodos.add(new Nodo(e.getX(), e.getY())); 
+    repaint();  
        
     
     }
@@ -76,14 +69,5 @@ public class Lienzo extends  JPanel implements  MouseListener {
         
         
     }
-
-    public ArrayList<Circulo> getListaCirculos() {
-        return listaCirculos;
-    }
-
-    public void setListaCirculos(ArrayList<Circulo> listaCirculos) {
-        this.listaCirculos = listaCirculos;
-    }
     
 }
-
