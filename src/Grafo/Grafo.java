@@ -16,6 +16,7 @@ public class Grafo {
     {
         
         
+        
     JFrame ventana = new JFrame("GRAFO");
     ventana.add(new Lienzo());
      ventana.setSize(600, 600);
