@@ -16,13 +16,13 @@ public class Grafo {
     {
         
         
+      
         
     JFrame ventana = new JFrame("GRAFO");
-    ventana.add(new Lienzo());
+ventana.add(new Lienzo()); 
      ventana.setSize(600, 600);
-  
-   ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
+     ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     ventana.setVisible(true);
      
 }
